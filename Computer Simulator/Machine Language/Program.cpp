@@ -12,10 +12,16 @@ void DisplayMemory()
 	cout << "***MEMORY DUMP***" << endl;
 	cout << endl;
 	int counter = 0;
+	int numbering = 1;
+	int* holder;
 	
-	for (int sift = 0; 0 < memory[counter]; sift++)
+	for (int sift = -1; sift < memory[counter]; sift++)
 	{
-		cout << sift << ": " << memory[counter] << endl;
+		holder = &memory[counter];
+		cout << numbering << ": " << holder << endl;
+		counter++;
+		numbering++;
 	}
-
+	cout << "***MEMORY DUMP COMPLETE***" << endl;
+	cout << endl;
 }
