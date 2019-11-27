@@ -4,6 +4,9 @@
 #include <algorithm>
 #include "Download.h"
 #include "Time.h"
+#include "stdint.h"
+#include "cstdint"
+#include "sstream"
 
 //Makes input and output keywords easier and take less time to type.
 using namespace std;
@@ -64,8 +67,35 @@ void Load()
 	}	
 }
 
+void Accumulator()
+{
+	
+}
+
 void Manipulator()
 {
+	//int* holder = &memory[globalCounter];
+	uintptr_t holder = reinterpret_cast<uintptr_t>(&memory[globalCounter]);
+
+	(void const)memory[globalCounter];
+	ostringstream s;
+	s << memory[globalCounter];
+	ostringstream s2;
+	static_cast<ostringstream&>(s2 << memory[globalCounter]).str();
+	string please = static_cast<ostringstream&>(ostringstream().flush() << memory[globalCounter]).str();
+	
+	
+	cout << "Converter is holding: " << please << endl;
+	system("Pause");
+
+
+	string help = "never";
+	
+	//for (int i = 0; i < help.length; i++)
+	{
+		
+	}
+	
 	int selector = rand() % 5 + 1;
 
 	if (selector == 1)
@@ -93,11 +123,13 @@ void Manipulator()
 //
 void Run()
 {
+	Manipulator();
 	do
 	{
 		if (acc == 0)
 		{
 			cout << "     Equal to 0!" << endl;
+			
 			Manipulator();
 			
 		}
