@@ -90,11 +90,11 @@ void Manipulator()
 	}
 }
 
+//
 void Run()
 {
 	do
 	{
-		
 		if (acc == 0)
 		{
 			cout << "     Equal to 0!" << endl;
